@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR.PO — Asian Street Food | Gemert</title>
+<meta name="description" content="MR.PO Asian Street Food — wok, sushi, sides &amp; more. Order via WhatsApp. Find us next to Jumbo, Gemert.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F3E7D3;
+    --cream-2:#EBDCC2;
+    --forest:#212D1D;
+    --forest-2:#182013;
+    --orange:#DD5A1B;
+    --orange-2:#B8480F;
+    --ink:#1B1712;
+    --paper:#FBF5EA;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    font-weight:500;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    line-height:0.95;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    background:var(--forest-2);
+    color:var(--cream);
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:7px 20px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    text-align:center;
+  }
+  .topbar b{color:var(--orange);}
+
+  /* ---------- HEADER ---------- */
+  header{
+    background:var(--forest);
+    position:sticky; top:0; z-index:50;
+    border-bottom:3px solid var(--orange);
+  }
+  .nav{
+    max-width:1160px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 20px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{width:52px; height:52px; border-radius:50%; border:2px solid var(--orange);}
+  .brand-text{color:var(--cream); line-height:1;}
+  .brand-text .main{font-family:'Anton'; font-size:1.35rem; letter-spacing:0.5px; color:var(--cream);}
+  .brand-text .sub{font-size:0.6rem; letter-spacing:0.18em; color:var(--orange); text-transform:uppercase; margin-top:2px;}
+  .nav-cta{
+    background:var(--orange); color:#fff; font-weight:700; font-size:0.85rem;
+    padding:10px 18px; border-radius:30px; display:flex; align-items:center; gap:8px;
+    white-space:nowrap;
+  }
+  .nav-cta svg{width:16px; height:16px; fill:#fff;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--forest);
+    color:var(--cream);
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero-inner{
+    max-width:1160px; margin:0 auto;
+    display:grid; grid-template-columns: 1.1fr 1fr;
+    align-items:center;
+    gap:30px;
+    padding:60px 20px 0;
+    min-height:520px;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    color:var(--cream);
+  }
+  .hero h1 span{color:var(--orange);}
+  .hero p.tag{
+    font-size:1.05rem; margin-top:16px; max-width:440px; color:#D9CFBD; font-weight:500;
+  }
+  .hero p.ready{
+    font-family:'Anton'; color:var(--orange); font-size:1.3rem; letter-spacing:0.5px;
+    text-transform:uppercase; margin-top:18px;
+  }
+  .hero-btns{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--orange); color:#fff; font-weight:700; padding:15px 26px;
+    border-radius:40px; display:inline-flex; align-items:center; gap:10px; font-size:0.95rem;
+    box-shadow:0 8px 20px rgba(221,90,27,0.35);
+    transition:transform .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-primary svg{width:19px; height:19px; fill:#fff;}
+  .btn-ghost{
+    border:2px solid var(--cream); color:var(--cream); font-weight:700; padding:13px 24px;
+    border-radius:40px; font-size:0.95rem;
+  }
+  .hero-photo{
+    position:relative; align-self:end; height:100%;
+  }
+  .hero-photo img{
+    width:100%; height:460px; object-fit:cover; object-position:top;
+    border-radius:16px 16px 0 0;
+    filter:saturate(1.05) contrast(1.03);
+  }
+  .torn{
+    position:absolute; left:0; right:0; bottom:-1px; height:60px;
+    background:var(--cream);
+    clip-path: polygon(0% 100%, 0% 30%, 4% 45%, 8% 20%, 13% 50%, 18% 15%, 23% 55%, 28% 25%, 34% 60%, 39% 10%, 44% 45%, 50% 20%, 55% 55%, 61% 30%, 66% 65%, 71% 15%, 77% 50%, 83% 25%, 89% 60%, 94% 20%, 100% 45%, 100% 100%);
+  }
+
+  /* ---------- INFO STRIP ---------- */
+  .info-strip{
+    background:var(--orange);
+    color:#fff;
+  }
+  .info-inner{
+    max-width:1160px; margin:0 auto;
+    display:flex; flex-wrap:wrap; gap:24px;
+    padding:20px 20px;
+    align-items:center; justify-content:space-between;
+  }
+  .info-item{display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.92rem;}
+  .info-item svg{width:20px; height:20px; fill:#fff; flex-shrink:0;}
+  .info-item .small{display:block; font-weight:500; font-size:0.8rem; opacity:0.9;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{max-width:1160px; margin:0 auto; padding:70px 20px 10px;}
+  .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:34px;}
+  .section-head h2{font-size:clamp(1.8rem,4vw,2.6rem); color:var(--forest);}
+  .section-head .line{flex:1; height:3px; background:repeating-linear-gradient(90deg, var(--orange) 0 10px, transparent 10px 16px);}
+  .section-note{color:#6b5f4d; font-size:0.9rem; margin-top:-24px; margin-bottom:34px; font-weight:500;}
+
+  /* ---------- CARDS ---------- */
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(250px,1fr)); gap:22px;
+  }
+  .card{
+    background:var(--paper); border-radius:14px; overflow:hidden;
+    border:1px solid #E4D7BE;
+    display:flex; flex-direction:column;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translateY(-4px); box-shadow:0 14px 28px rgba(33,45,29,0.12);}
+  .card img{width:100%; height:170px; object-fit:cover;}
+  .card-body{padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .card-title{font-family:'Anton'; font-size:1.02rem; color:var(--forest); text-transform:uppercase; letter-spacing:0.3px;}
+  .card-weight{font-size:0.72rem; color:var(--orange-2); font-weight:700; text-transform:uppercase; letter-spacing:0.05em;}
+  .card-desc{font-size:0.85rem; color:#5c5343; line-height:1.4; flex:1;}
+  .card-bottom{display:flex; align-items:center; justify-content:space-between; margin-top:6px;}
+  .price{font-family:'Anton'; color:var(--orange-2); font-size:1.25rem;}
+  .order-btn{
+    background:var(--forest); color:var(--cream); font-size:0.72rem; font-weight:700;
+    padding:9px 13px; border-radius:24px; display:flex; align-items:center; gap:6px;
+    text-transform:uppercase; letter-spacing:0.04em; white-space:nowrap;
+  }
+  .order-btn svg{width:13px; height:13px; fill:#25D366;}
+  .order-btn:hover{background:var(--orange-2);}
+
+  /* ---------- ADD TO CART BUTTONS ---------- */
+  .add-btn{
+    background:var(--forest); color:var(--cream); font-size:0.72rem; font-weight:700;
+    padding:9px 14px; border-radius:24px; display:flex; align-items:center; gap:6px;
+    text-transform:uppercase; letter-spacing:0.04em; white-space:nowrap;
+    border:none; cursor:pointer; font-family:inherit;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .add-btn svg{width:13px; height:13px; fill:var(--orange);}
+  .add-btn:hover{background:var(--orange-2);}
+  .add-btn:active{transform:scale(0.95);}
+  .add-btn.just-added{background:#2E7D46;}
+  .add-btn.just-added svg{fill:#fff;}
+  .drink-add-btn{font-size:0.68rem; padding:8px 12px; margin-top:6px;}
+
+  /* ---------- CART FAB & PANEL ---------- */
+  .cart-fab{
+    position:fixed; right:20px; bottom:20px; z-index:100;
+    background:var(--orange); color:#fff; padding:14px 20px; border-radius:40px;
+    display:none; align-items:center; gap:10px; font-weight:700; font-size:0.9rem;
+    box-shadow:0 10px 24px rgba(0,0,0,0.3); border:none; cursor:pointer; font-family:inherit;
+  }
+  .cart-fab svg{width:20px; height:20px; fill:#fff;}
+  .cart-fab .cart-badge{
+    background:var(--forest); color:#fff; border-radius:50%; width:22px; height:22px;
+    display:flex; align-items:center; justify-content:center; font-size:0.75rem;
+  }
+  .cart-overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:150;
+    display:none; opacity:0; transition:opacity .2s ease;
+  }
+  .cart-overlay.open{display:block; opacity:1;}
+  .cart-panel{
+    position:fixed; left:0; right:0; bottom:0; z-index:160;
+    background:var(--paper); border-radius:20px 20px 0 0;
+    max-width:520px; margin:0 auto;
+    max-height:80vh; overflow-y:auto;
+    transform:translateY(100%); transition:transform .25s ease;
+    padding:24px 20px 20px;
+    box-shadow:0 -10px 30px rgba(0,0,0,0.25);
+  }
+  .cart-panel.open{transform:translateY(0);}
+  .cart-panel-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;}
+  .cart-panel-head h3{font-family:'Anton'; color:var(--forest); font-size:1.3rem; text-transform:uppercase;}
+  .cart-close{background:none; border:none; font-size:1.5rem; color:var(--forest); cursor:pointer; line-height:1; padding:4px;}
+  .cart-empty{color:#8a7c65; font-size:0.9rem; text-align:center; padding:30px 0;}
+  .cart-row{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:12px 0; border-bottom:1px solid #E4D7BE;
+  }
+  .cart-row-name{font-weight:700; color:var(--forest); font-size:0.9rem; flex:1;}
+  .cart-row-qty{display:flex; align-items:center; gap:10px;}
+  .cart-row-qty button{
+    width:26px; height:26px; border-radius:50%; border:1px solid var(--forest);
+    background:none; color:var(--forest); font-size:1rem; cursor:pointer; font-family:inherit;
+  }
+  .cart-row-price{font-family:'Anton'; color:var(--orange-2); font-size:0.95rem; min-width:60px; text-align:right;}
+  .cart-total-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 0 8px; font-family:'Anton'; font-size:1.15rem; color:var(--forest);
+    text-transform:uppercase;
+  }
+  .cart-send-btn{
+    width:100%; background:#25D366; color:#fff; font-weight:700; padding:15px;
+    border-radius:40px; border:none; font-size:1rem; margin-top:12px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; gap:10px; font-family:inherit;
+  }
+  .cart-send-btn svg{width:19px; height:19px; fill:#fff;}
+  .cart-clear-btn{
+    width:100%; background:none; color:#8a7c65; font-weight:600; padding:10px;
+    border:none; font-size:0.85rem; margin-top:6px; cursor:pointer; font-family:inherit;
+  }
+  .fulfil-toggle{
+    display:flex; gap:8px; margin-top:14px;
+  }
+  .fulfil-btn{
+    flex:1; padding:11px; border-radius:24px; border:2px solid var(--forest);
+    background:none; color:var(--forest); font-weight:700; font-size:0.85rem;
+    cursor:pointer; font-family:inherit; text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .fulfil-btn.active{background:var(--forest); color:var(--cream);}
+  .fulfil-note{font-size:0.75rem; color:#8a7c65; text-align:center; margin-top:8px;}
+
+  /* Small list style for drinks */
+  .drinks-list{
+    background:var(--paper); border:1px solid #E4D7BE; border-radius:14px; overflow:hidden;
+  }
+  .drink-row{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 22px; border-bottom:1px solid #E4D7BE; font-weight:600;
+  }
+  .drink-row:last-child{border-bottom:none;}
+  .drink-row .name{color:var(--forest);}
+  .drink-row .vol{color:#8a7c65; font-weight:500; font-size:0.82rem; margin-left:6px;}
+  .drink-row .price{font-size:1.05rem;}
+
+  .drinks-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:18px;
+  }
+  .drink-card{
+    background:var(--paper); border:1px solid #E4D7BE; border-radius:14px;
+    padding:20px 16px; text-align:center;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:8px;
+    min-height:230px;
+  }
+  .drink-card img{width:auto; height:110px; object-fit:contain;}
+  .drink-card .name{font-family:'Anton'; font-size:0.95rem; color:var(--forest); text-transform:uppercase;}
+  .drink-card .vol{font-size:0.75rem; color:#8a7c65; font-weight:600;}
+  .drink-card .price{font-family:'Anton'; color:var(--orange-2); font-size:1.15rem; margin-top:2px;}
+  .drink-order-btn{
+    background:var(--forest); color:var(--cream); font-size:0.68rem; font-weight:700;
+    padding:8px 12px; border-radius:24px; display:flex; align-items:center; gap:5px;
+    text-transform:uppercase; letter-spacing:0.04em; margin-top:6px; white-space:nowrap;
+  }
+  .drink-order-btn svg{width:12px; height:12px; fill:#25D366;}
+  .drink-order-btn:hover{background:var(--orange-2);}
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    margin:90px 0 0;
+    background:var(--forest);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-inner{
+    max-width:900px; margin:0 auto; text-align:center; padding:70px 20px;
+  }
+  .cta-inner h2{font-size:clamp(2rem,5vw,3rem); color:var(--cream); margin-bottom:14px;}
+  .cta-inner h2 span{color:var(--orange);}
+  .cta-inner p{color:#D9CFBD; margin-bottom:30px; font-size:1rem;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--forest-2); color:#B9AF9C; padding:44px 20px 26px;
+  }
+  .footer-inner{
+    max-width:1160px; margin:0 auto;
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;
+  }
+  .footer-col h3{font-family:'Anton'; color:var(--cream); font-size:1rem; margin-bottom:12px; text-transform:uppercase;}
+  .footer-col p, .footer-col div{font-size:0.85rem; line-height:1.7;}
+  .footer-bottom{
+    max-width:1160px; margin:34px auto 0; padding-top:20px; border-top:1px solid #33402C;
+    font-size:0.75rem; text-align:center; color:#7d7360;
+  }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-wa{
+    position:fixed; right:20px; bottom:20px; z-index:99;
+    background:#25D366; color:#fff; width:60px; height:60px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px rgba(0,0,0,0.3);
+  }
+  .float-wa svg{width:30px; height:30px; fill:#fff;}
+
+  @media (max-width:820px){
+    .hero-inner{grid-template-columns:1fr; padding-top:36px;}
+    .hero-photo{order:-1; height:auto;}
+    .hero-photo img{height:280px; border-radius:16px;}
+    .torn{display:none;}
+    .info-inner{justify-content:flex-start;}
+    .nav-cta span{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">📍 <b>Gemert</b> — Jumbo, Pastoor Poellplein 9, 5421 PK &nbsp;|&nbsp; 🕑 Mon · Tue · Sun, 12:00–20:00</div>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="images/logo.png" alt="MR.PO logo">
+      <div class="brand-text">
+        <div class="main">MR.PO</div>
+        <div class="sub">Asian Street Food</div>
+      </div>
+    </div>
+    <a class="nav-cta" href="https://wa.me/380960517378?text=Hi%20MR.PO!%20I%27d%20like%20to%20order%3A%20" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.907 6.478L4 29l7.723-1.868A11.94 11.94 0 0016 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm0 21.818c-1.99 0-3.845-.58-5.404-1.578l-.387-.242-4.585 1.109 1.13-4.47-.253-.406A9.77 9.77 0 016.182 15c0-5.42 4.4-9.818 9.819-9.818 5.418 0 9.818 4.398 9.818 9.818 0 5.42-4.4 9.818-9.818 9.818zm5.383-7.354c-.294-.147-1.74-.859-2.01-.957-.27-.098-.466-.147-.663.147-.196.294-.762.957-.934 1.153-.172.196-.343.221-.637.074-.294-.147-1.242-.458-2.366-1.462-.874-.78-1.464-1.744-1.636-2.038-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.025-.514-.074-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51l-.564-.01c-.196 0-.514.074-.784.368-.27.294-1.03 1.006-1.03 2.454s1.055 2.847 1.202 3.043c.147.196 2.076 3.17 5.032 4.444.703.303 1.251.484 1.678.62.705.224 1.347.192 1.854.117.566-.084 1.74-.712 1.985-1.4.245-.688.245-1.278.172-1.4-.074-.123-.27-.196-.564-.343z"/></svg>
+      <span>Order via WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Asian<br>Street <span>Food</span></h1>
+      <p class="tag">Original flavors — every order cooked fresh in the truck, just for you.</p>
+      <p class="ready">Are you ready to eat?</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://wa.me/380960517378?text=Hi%20MR.PO!%20I%27d%20like%20to%20order%3A%20" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.907 6.478L4 29l7.723-1.868A11.94 11.94 0 0016 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm0 21.818c-1.99 0-3.845-.58-5.404-1.578l-.387-.242-4.585 1.109 1.13-4.47-.253-.406A9.77 9.77 0 016.182 15c0-5.42 4.4-9.818 9.819-9.818 5.418 0 9.818 4.398 9.818 9.818 0 5.42-4.4 9.818-9.818 9.818zm5.383-7.354c-.294-.147-1.74-.859-2.01-.957-.27-.098-.466-.147-.663.147-.196.294-.762.957-.934 1.153-.172.196-.343.221-.637.074-.294-.147-1.242-.458-2.366-1.462-.874-.78-1.464-1.744-1.636-2.038-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.025-.514-.074-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51l-.564-.01c-.196 0-.514.074-.784.368-.27.294-1.03 1.006-1.03 2.454s1.055 2.847 1.202 3.043c.147.196 2.076 3.17 5.032 4.444.703.303 1.251.484 1.678.62.705.224 1.347.192 1.854.117.566-.084 1.74-.712 1.985-1.4.245-.688.245-1.278.172-1.4-.074-.123-.27-.196-.564-.343z"/></svg>
+          Order via WhatsApp
+        </a>
+        <a class="btn-ghost" href="#menu">View menu</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/hero_truck.png" alt="MR.PO food truck">
+      <div class="torn"></div>
+    </div>
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="info-inner">
+    <div class="info-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C7.86 2 4.5 5.36 4.5 9.5c0 5.4 6.14 11.5 7.5 12.5 1.36-1 7.5-7.1 7.5-12.5C19.5 5.36 16.14 2 12 2zm0 10.2a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4z"/></svg>
+      <span>Gemert — next to Jumbo<span class="small">Pastoor Poellplein 9, 5421 PK Gemert</span></span>
+    </div>
+    <div class="info-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10.6l4.2 2.5-.75 1.3L11 13.7V6.5h1.5v6.1z"/></svg>
+      <span>Open Mon · Tue · Sun<span class="small">12:00 – 20:00</span></span>
+    </div>
+    <div class="info-item">
+      <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.907 6.478L4 29l7.723-1.868A11.94 11.94 0 0016 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3z"/></svg>
+      <span>+380 96 051 73 78<span class="small">Order or ask us anything</span></span>
+    </div>
+  </div>
+</div>
+
+<main id="menu">
+
+  <section class="section">
+    <div class="section-head"><h2>Wok Dishes</h2><div class="line"></div></div>
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/wok1_sweetsour.png" alt="Sweet & Sour Chicken">
+        <div class="card-body">
+          <div class="card-title">Sweet &amp; Sour Chicken</div>
+          <div class="card-weight">400 g</div>
+          <div class="card-desc">Chicken, pineapple, sweet &amp; sour sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€15.95</span>
+            <button class="add-btn" onclick="addToCart('Sweet &amp; Sour Chicken', 15.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/wok2_pekingbeef.png" alt="Peking Beef">
+        <div class="card-body">
+          <div class="card-title">Peking Beef</div>
+          <div class="card-weight">400 g</div>
+          <div class="card-desc">Beef, bell pepper, carrot, onion, Peking sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€15.95</span>
+            <button class="add-btn" onclick="addToCart('Peking Beef', 15.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/wok3_friedrice.png" alt="Fried Rice">
+        <div class="card-body">
+          <div class="card-title">Fried Rice</div>
+          <div class="card-weight">370 g</div>
+          <div class="card-desc">Rice, bell pepper, onion, green peas, egg.</div>
+          <div class="card-bottom">
+            <span class="price">€9.95</span>
+            <button class="add-btn" onclick="addToCart('Fried Rice', 9.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/wok4_noodleschicken.png" alt="Noodles with Chicken">
+        <div class="card-body">
+          <div class="card-title">Noodles with Chicken</div>
+          <div class="card-weight">400 g</div>
+          <div class="card-desc">Noodles, chicken, carrot, cabbage, onion, soy sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€14.95</span>
+            <button class="add-btn" onclick="addToCart('Noodles with Chicken', 14.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/wok5_noodlesshrimp.png" alt="Noodles with Shrimp">
+        <div class="card-body">
+          <div class="card-title">Noodles with Shrimp</div>
+          <div class="card-weight">400 g</div>
+          <div class="card-desc">Noodles, shrimp, carrot, cabbage, onion, soy sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€14.95</span>
+            <button class="add-btn" onclick="addToCart('Noodles with Shrimp', 14.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/wok6_noodlesbeef.png" alt="Noodles with Beef">
+        <div class="card-body">
+          <div class="card-title">Noodles with Beef</div>
+          <div class="card-weight">400 g</div>
+          <div class="card-desc">Noodles, beef, cabbage, bell pepper, onion, soy sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€14.95</span>
+            <button class="add-btn" onclick="addToCart('Noodles with Beef', 14.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Lunch Bowls</h2><div class="line"></div></div>
+    <div class="section-note">Rice bowl, ready to go.</div>
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/lunch1_sweetsour.png" alt="Rice + Sweet & Sour Chicken">
+        <div class="card-body">
+          <div class="card-title">Rice + Sweet &amp; Sour Chicken</div>
+          <div class="card-desc">Rice, chicken, pineapple, sweet &amp; sour sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€14.95</span>
+            <button class="add-btn" onclick="addToCart('Rice + Sweet &amp; Sour Chicken', 14.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/lunch2_pekingbeef.png" alt="Rice + Peking Beef">
+        <div class="card-body">
+          <div class="card-title">Rice + Peking Beef</div>
+          <div class="card-desc">Rice, beef, bell pepper, carrot, onion, Peking sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€14.95</span>
+            <button class="add-btn" onclick="addToCart('Rice + Peking Beef', 14.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/lunch3_teriyaki.png" alt="Rice + Chicken Teriyaki">
+        <div class="card-body">
+          <div class="card-title">Rice + Chicken Teriyaki</div>
+          <div class="card-desc">Rice, chicken, carrot, bell pepper, onion, teriyaki sauce, green onion.</div>
+          <div class="card-bottom">
+            <span class="price">€14.95</span>
+            <button class="add-btn" onclick="addToCart('Rice + Chicken Teriyaki', 14.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Fried Dishes</h2><div class="line"></div></div>
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/fried1_calamari.png" alt="Fried Calamari Rings">
+        <div class="card-body">
+          <div class="card-title">Fried Calamari Rings</div>
+          <div class="card-weight">5 pieces</div>
+          <div class="card-desc">Served with sweet &amp; sour sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€4.95</span>
+            <button class="add-btn" onclick="addToCart('Fried Calamari Rings', 4.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/fried2_gyoza.png" alt="Panko Shrimp">
+        <div class="card-body">
+          <div class="card-title">Panko Shrimp</div>
+          <div class="card-weight">5 pieces</div>
+          <div class="card-desc">Crispy panko-breaded shrimp.</div>
+          <div class="card-bottom">
+            <span class="price">€4.95</span>
+            <button class="add-btn" onclick="addToCart('Panko Shrimp', 4.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/fried3_lumpia.png" alt="Lumpia Spring Rolls">
+        <div class="card-body">
+          <div class="card-title">Lumpia (Spring Rolls)</div>
+          <div class="card-weight">5 pieces</div>
+          <div class="card-desc">Served with sweet &amp; sour sauce.</div>
+          <div class="card-bottom">
+            <span class="price">€4.95</span>
+            <button class="add-btn" onclick="addToCart('Lumpia Spring Rolls', 4.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Appetizers</h2><div class="line"></div></div>
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/app2_cucumber.png" alt="Sweet & Sour Cucumbers with Goji Berries">
+        <div class="card-body">
+          <div class="card-title">Sweet &amp; Sour Cucumbers with Goji Berries</div>
+          <div class="card-weight">120 g</div>
+          <div class="card-desc">Fresh cucumbers, goji berries, sweet &amp; sour dressing.</div>
+          <div class="card-bottom">
+            <span class="price">€2.99</span>
+            <button class="add-btn" onclick="addToCart('Sweet &amp; Sour Cucumbers', 2.99, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/app3_mochi.png" alt="Mochi">
+        <div class="card-body">
+          <div class="card-title">Mochi</div>
+          <div class="card-weight">120 g · Strawberry Mojito / Tropical</div>
+          <div class="card-desc">Two flavours to choose from.</div>
+          <div class="card-bottom">
+            <span class="price">€2.95</span>
+            <button class="add-btn" onclick="addToCart('Mochi', 2.95, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:20px;">
+    <div class="section-head"><h2>Cold Drinks</h2><div class="line"></div></div>
+    <div class="drinks-grid">
+
+      <div class="drink-card">
+        <img src="images/drink_water.png" alt="Water bottle">
+        <div class="name">Water</div>
+        <div class="vol">500 ml</div>
+        <div class="price">€2.50</div>
+        <button class="add-btn drink-add-btn" onclick="addToCart('Water', 2.50, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+      </div>
+
+      <div class="drink-card">
+        <img src="images/drink_fanta.png" alt="Fanta can">
+        <div class="name">Fanta</div>
+        <div class="vol">330 ml</div>
+        <div class="price">€2.50</div>
+        <button class="add-btn drink-add-btn" onclick="addToCart('Fanta', 2.50, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+      </div>
+
+      <div class="drink-card">
+        <img src="images/drink_cokezero.png" alt="Coca-Cola Zero Sugar can">
+        <div class="name">Coca-Cola Zero</div>
+        <div class="vol">330 ml</div>
+        <div class="price">€2.50</div>
+        <button class="add-btn drink-add-btn" onclick="addToCart('Coca-Cola Zero', 2.50, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+      </div>
+
+      <div class="drink-card">
+        <img src="images/drink_coke.png" alt="Coca-Cola can">
+        <div class="name">Coca-Cola</div>
+        <div class="vol">330 ml</div>
+        <div class="price">€2.50</div>
+        <button class="add-btn drink-add-btn" onclick="addToCart('Coca-Cola', 2.50, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+      </div>
+
+      <div class="drink-card">
+        <img src="images/drink_drpepper.png" alt="Dr Pepper can">
+        <div class="name">Dr Pepper</div>
+        <div class="vol">330 ml</div>
+        <div class="price">€2.50</div>
+        <button class="add-btn drink-add-btn" onclick="addToCart('Dr Pepper', 2.50, this)"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>Add</button>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2>Hungry <span>already?</span></h2>
+    <p>Send us a message on WhatsApp — tell us what you'd like and when you're picking up.</p>
+    <a class="btn-primary" href="https://wa.me/380960517378?text=Hi%20MR.PO!%20I%27d%20like%20to%20order%3A%20" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.907 6.478L4 29l7.723-1.868A11.94 11.94 0 0016 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm0 21.818c-1.99 0-3.845-.58-5.404-1.578l-.387-.242-4.585 1.109 1.13-4.47-.253-.406A9.77 9.77 0 016.182 15c0-5.42 4.4-9.818 9.819-9.818 5.418 0 9.818 4.398 9.818 9.818 0 5.42-4.4 9.818-9.818 9.818zm5.383-7.354c-.294-.147-1.74-.859-2.01-.957-.27-.098-.466-.147-.663.147-.196.294-.762.957-.934 1.153-.172.196-.343.221-.637.074-.294-.147-1.242-.458-2.366-1.462-.874-.78-1.464-1.744-1.636-2.038-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.025-.514-.074-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51l-.564-.01c-.196 0-.514.074-.784.368-.27.294-1.03 1.006-1.03 2.454s1.055 2.847 1.202 3.043c.147.196 2.076 3.17 5.032 4.444.703.303 1.251.484 1.678.62.705.224 1.347.192 1.854.117.566-.084 1.74-.712 1.985-1.4.245-.688.245-1.278.172-1.4-.074-.123-.27-.196-.564-.343z"/></svg>
+      Order via WhatsApp
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>MR.PO Asian Street Food</h3>
+      <p>Fresh wok &amp; sushi dishes, cooked to order.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Find us</h3>
+      <div>Gemert — next to Jumbo<br>Pastoor Poellplein 9<br>5421 PK Gemert</div>
+    </div>
+    <div class="footer-col">
+      <h3>Hours</h3>
+      <div>Monday: 12:00 – 20:00<br>Tuesday: 12:00 – 20:00<br>Sunday: 12:00 – 20:00</div>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <div><a href="https://wa.me/380960517378" target="_blank" rel="noopener">WhatsApp: +380 96 051 73 78</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 MR.PO Asian Street Food. All rights reserved.</div>
+</footer>
+
+<button class="cart-fab" id="cartFab" onclick="toggleCart()">
+  <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L20.88 5H4.54l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+  <span>Order</span>
+  <span class="cart-badge" id="cartCount">0</span>
+</button>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-panel-head">
+    <h3>Your Order</h3>
+    <button class="cart-close" onclick="toggleCart()" aria-label="Close">&times;</button>
+  </div>
+  <div id="cartList"></div>
+  <div id="cartEmptyMsg" class="cart-empty">Tap "Add" on any item to build your order.</div>
+  <div id="cartTotalWrap" style="display:none;">
+    <div class="cart-total-row"><span>Total</span><span id="cartTotal">€0.00</span></div>
+
+    <div class="fulfil-toggle">
+      <button type="button" class="fulfil-btn active" id="fulfilPickup" onclick="setFulfilment('pickup')">Pickup</button>
+      <button type="button" class="fulfil-btn" id="fulfilDelivery" onclick="setFulfilment('delivery')">Delivery</button>
+    </div>
+    <div class="fulfil-note">Delivery: min. €30 order, Gemert only.</div>
+
+    <button class="cart-send-btn" onclick="sendCartOrder()">
+      <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.907 6.478L4 29l7.723-1.868A11.94 11.94 0 0016 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm0 21.818c-1.99 0-3.845-.58-5.404-1.578l-.387-.242-4.585 1.109 1.13-4.47-.253-.406A9.77 9.77 0 016.182 15c0-5.42 4.4-9.818 9.819-9.818 5.418 0 9.818 4.398 9.818 9.818 0 5.42-4.4 9.818-9.818 9.818zm5.383-7.354c-.294-.147-1.74-.859-2.01-.957-.27-.098-.466-.147-.663.147-.196.294-.762.957-.934 1.153-.172.196-.343.221-.637.074-.294-.147-1.242-.458-2.366-1.462-.874-.78-1.464-1.744-1.636-2.038-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.025-.514-.074-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51l-.564-.01c-.196 0-.514.074-.784.368-.27.294-1.03 1.006-1.03 2.454s1.055 2.847 1.202 3.043c.147.196 2.076 3.17 5.032 4.444.703.303 1.251.484 1.678.62.705.224 1.347.192 1.854.117.566-.084 1.74-.712 1.985-1.4.245-.688.245-1.278.172-1.4-.074-.123-.27-.196-.564-.343z"/></svg>
+      Send Order via WhatsApp
+    </button>
+    <button class="cart-clear-btn" onclick="clearCart()">Clear order</button>
+  </div>
+</div>
+
+<script>
+  var cart = {};
+  var fulfilment = 'pickup';
+
+  function setFulfilment(mode){
+    fulfilment = mode;
+    document.getElementById('fulfilPickup').classList.toggle('active', mode === 'pickup');
+    document.getElementById('fulfilDelivery').classList.toggle('active', mode === 'delivery');
+  }
+
+  function addToCart(name, price, btnEl){
+    if(!cart[name]) cart[name] = {price: price, qty: 0};
+    cart[name].qty += 1;
+    updateCartUI();
+    if(btnEl){
+      btnEl.classList.add('just-added');
+      setTimeout(function(){ btnEl.classList.remove('just-added'); }, 500);
+    }
+  }
+
+  function changeQty(name, delta){
+    if(!cart[name]) return;
+    cart[name].qty += delta;
+    if(cart[name].qty <= 0) delete cart[name];
+    updateCartUI();
+  }
+
+  function clearCart(){
+    cart = {};
+    updateCartUI();
+  }
+
+  function updateCartUI(){
+    var items = Object.keys(cart);
+    var count = 0, total = 0;
+    items.forEach(function(k){ count += cart[k].qty; total += cart[k].qty * cart[k].price; });
+
+    document.getElementById('cartCount').textContent = count;
+    document.getElementById('cartFab').style.display = count > 0 ? 'flex' : 'none';
+
+    var list = document.getElementById('cartList');
+    list.innerHTML = '';
+    items.forEach(function(name){
+      var it = cart[name];
+      var row = document.createElement('div');
+      row.className = 'cart-row';
+      var safeName = name.replace(/'/g, "\\'");
+      row.innerHTML =
+        '<span class="cart-row-name">' + name + '</span>' +
+        '<div class="cart-row-qty">' +
+          '<button onclick="changeQty(\'' + safeName + '\',-1)">−</button>' +
+          '<span>' + it.qty + '</span>' +
+          '<button onclick="changeQty(\'' + safeName + '\',1)">+</button>' +
+        '</div>' +
+        '<span class="cart-row-price">€' + (it.qty * it.price).toFixed(2) + '</span>';
+      list.appendChild(row);
+    });
+
+    document.getElementById('cartEmptyMsg').style.display = count > 0 ? 'none' : 'block';
+    document.getElementById('cartTotalWrap').style.display = count > 0 ? 'block' : 'none';
+    document.getElementById('cartTotal').textContent = '€' + total.toFixed(2);
+  }
+
+  function toggleCart(){
+    document.getElementById('cartPanel').classList.toggle('open');
+    document.getElementById('cartOverlay').classList.toggle('open');
+  }
+
+  function sendCartOrder(){
+    var items = Object.keys(cart);
+    if(items.length === 0) return;
+    var text = "Hi MR.PO! I'd like to order:\n";
+    var total = 0;
+    items.forEach(function(name){
+      var it = cart[name];
+      text += "- " + name + " x" + it.qty + " (€" + (it.qty * it.price).toFixed(2) + ")\n";
+      total += it.qty * it.price;
+    });
+    text += "\nTotal: €" + total.toFixed(2);
+    if(fulfilment === 'delivery'){
+      text += "\n\nDelivery requested (Gemert only, min. €30 order)";
+      if(total < 30){
+        text += "\nNote: order is below €30 minimum for delivery — please confirm.";
+      }
+      text += "\nAddress: ";
+    } else {
+      text += "\n\nPickup";
+    }
+    window.open('https://wa.me/380960517378?text=' + encodeURIComponent(text), '_blank');
+  }
+</script>
+
+</body>
+</html>
